@@ -1,0 +1,1688 @@
+/* 全局样式 */
+:root {
+  --primary-color: #00316b; /* 主色调 - 深蓝色 */
+  --secondary-color: #0055b8; /* 次要色调 - 蓝色 */
+  --accent-color: #78c2ff; /* 强调色 - 浅蓝色，替换黄色 */
+  --opportunity-color: #0072f5; /* 机会页面强调色 - 亮蓝色 */
+  --text-color: #333; /* 文本色 */
+  --background-color: #fff; /* 背景色 - 改为白色 */
+  --footer-color: #00316b; /* 页脚色 - 深蓝色 */
+  --light-bg: #fff; /* 改为白色 */
+  --card-bg: #f9f9f9; /* 卡片背景色 - 浅灰色背景 */
+  --dark-bg: #222;
+  --container-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* 导航栏 */
+header {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+  font-size: 1em;
+  transition: color 0.2s;
+  position: relative;
+  padding: 0.5em 0;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-color);
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+nav a[href="opportunity.html"] {
+  color: #fff;
+  background-color: var(--opportunity-color);
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0.3em 0.8em;
+}
+
+nav a[href="opportunity.html"]:hover, 
+nav a[href="opportunity.html"].active {
+  color: #fff;
+  background-color: var(--opportunity-color);
+  opacity: 0.9;
+}
+
+.language-switch {
+  display: none;
+}
+
+/* 英雄区 */
+.hero-banner:not(.slideshow-container + header + main .hero-banner) {
+  background: #fff;
+  padding: 4em 0;
+  text-align: center;
+}
+
+.hero-banner:not(.slideshow-container + header + main .hero-banner) h1 {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 0.2em;
+}
+
+.hero-banner:not(.slideshow-container + header + main .hero-banner) h2 {
+  font-size: 1.8em;
+  color: var(--secondary-color);
+  margin-bottom: 1.5em;
+  font-weight: normal;
+}
+
+.quote-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.slogan {
+  font-size: 1.3em;
+  color: var(--secondary-color);
+  line-height: 1.8;
+}
+
+.slogan em {
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.7em;
+}
+
+/* 主要内容区 */
+body:not(:has(.slideshow-container)) main {
+  margin: 0 auto;
+  padding: 1em 0 4em;
+  background-color: #fff;
+}
+
+/* First section after the hero - Handled by slideshow.css for home page */
+body:not(:has(.slideshow-container)) main > section:first-child {
+  padding-top: 1em;
+}
+
+section {
+  padding: 0em 0 4em;
+  background-color: #fff;
+}
+
+section h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5em;
+  font-size: 2em;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 0.5em auto;
+}
+
+/* Overview部分的新样式 */
+.overview {
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.overview::before {
+  content: none;
+}
+
+.overview-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.lead.fullwidth {
+  width: 100%;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: var(--text-color);
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.research-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.pillar {
+  background: white;
+  border-radius: 8px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pillar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-title {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.overview-video-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9纵横比 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: 5px solid white;
+  transition: transform 0.3s;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.highlights {
+  background-color: #fff;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.highlight-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 1em;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.2em 0.8em;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.card-content {
+  padding: 1.5em;
+}
+
+.card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+  font-size: 1.2em;
+}
+
+.card-content h4 {
+  color: var(--secondary-color);
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 2em;
+}
+
+/* 使命部分 */
+.mission {
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 6em;
+  margin-bottom: 0;
+}
+
+.mission p {
+  max-width: 800px;
+  margin: 0 auto 2em;
+  font-size: 1.2em;
+  line-height: 1.7;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 页面标题 */
+.page-title {
+  padding: 3em 0 1em;
+  text-align: center;
+}
+
+.page-title h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+}
+
+/* About页面 */
+.about-section {
+  background: #fff;
+  padding: 3em 0;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content .lead {
+  font-size: 1.3em;
+  color: var(--secondary-color);
+  margin-bottom: 2em;
+  line-height: 1.7;
+}
+
+.about-content h2 {
+  color: var(--primary-color);
+  margin: 1.5em 0 1em;
+  font-size: 1.8em;
+}
+
+.about-content p {
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+
+.lab-culture {
+  margin: 3em 0;
+}
+
+.lab-quotes {
+  margin: 3em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.lab-quotes blockquote {
+  background: var(--card-bg);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+}
+
+.lab-quotes blockquote p {
+  font-size: 1.3em;
+  margin-bottom: 0.7em;
+}
+
+.lab-quotes cite {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+/* 研究页面 */
+.research-section {
+  background: #fff;
+}
+
+.research-intro {
+  max-width: 900px;
+  margin: 0 auto 3em;
+}
+
+.research-intro .lead {
+  font-size: 1.3em;
+  color: var(--secondary-color);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.research-areas {
+  margin: 3em 0;
+}
+
+.research-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3em;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.research-area:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.research-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.research-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.research-content {
+  flex: 2;
+  padding: 2em;
+}
+
+.research-content h2 {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.research-content h2::after {
+  margin: 0.5em 0;
+}
+
+.research-content p {
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+
+.research-content ul {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.research-content li {
+  margin-bottom: 0.5em;
+}
+
+
+/* 新闻页面 */
+.news-section {
+  background: #fff;
+  margin-bottom: 2em;
+  padding: 1.5em 2em 2em;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.news-section h2 {
+  color: var(--primary-color);
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.news-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 0.3em auto;
+}
+
+.news-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.report-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.report-list li {
+  margin-bottom: 0.6em;
+  padding: 0.6em 0;
+  background: transparent;
+  border-left: none;
+  border-bottom: 1px solid #eee;
+  transition: all 0.2s ease;
+}
+
+.report-list li:hover {
+  background-color: rgba(248, 249, 250, 0.8);
+}
+
+.report-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  line-height: 1.4;
+  font-size: 1em;
+  padding-left: 0.5em;
+  position: relative;
+  overflow: hidden;
+}
+
+.report-list a:before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 0;
+  background-color: var(--secondary-color);
+  transition: height 0.3s ease;
+}
+
+.report-list a:hover {
+  color: var(--secondary-color);
+  padding-left: 1em;
+}
+
+.report-list a:hover:before {
+  height: 70%;
+}
+
+.awards-list {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.awards-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.awards-list li {
+  margin-bottom: 1.5em;
+  padding: 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: baseline;
+  background: linear-gradient(to right, #ecf4ff, #f7faff);
+  border-left: 3px solid rgba(0, 85, 184, 0.3);
+}
+
+.awards-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--secondary-color);
+}
+
+.awards-list li strong {
+  color: var(--primary-color);
+  font-size: 1.1em;
+  margin-right: 0.8em;
+  display: inline-block;
+  min-width: 60px;
+}
+
+/* Responsive adjustments for news page */
+@media (max-width: 768px) {
+  .report-list li,
+  .awards-list li {
+    padding: 0.8em;
+  }
+  
+  .report-list a,
+  .awards-list li {
+    font-size: 0.95em;
+  }
+  
+  .awards-list li {
+    flex-direction: column;
+  }
+  
+  .awards-list li strong {
+    margin-bottom: 0.5em;
+    display: block;
+  }
+}
+
+.twitter-feed {
+  background: var(--light-bg);
+  padding: 3em 0;
+}
+
+.twitter-timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 团队成员页面 */
+.people-section {
+  background: #fff;
+  padding-top: 0;
+}
+
+.pi-card,
+.person-detailed-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-left-column {
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+
+.profile-left-column .pi-image {
+  margin-bottom: 1.5em;
+  margin-right: 0;
+  text-align: center;
+}
+
+.pi-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.profile-left-column h3 {
+  margin-top: 0;
+  font-size: 1.6em;
+  color: var(--primary-color);
+}
+
+.profile-left-column .pi-title {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.8em;
+}
+
+.profile-left-column p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 0.8em;
+}
+
+.profile-left-column .pi-social a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.profile-left-column .pi-social a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.profile-right-column {
+  flex: 1 1 67%;
+  padding-left: 15px;
+}
+
+.profile-right-column h4 {
+  font-size: 1.3em;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.3em;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+
+.profile-right-column ul {
+  list-style-type: disc;
+  padding-left: 25px;
+  margin-bottom: 1.5em;
+}
+
+.profile-right-column ul li {
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+
+.profile-right-column h4 + h4 {
+  margin-top: 1.5em;
+}
+
+.people-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+  margin: 2em auto;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.person:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5em;
+  border: 3px solid var(--secondary-color);
+}
+
+.person h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+.member-title {
+  color: var(--secondary-color);
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.person p {
+  color: var(--text-color);
+}
+
+.alumni-list {
+  max-width: 900px;
+  margin: 2em auto;
+}
+
+.alumni {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.alumni h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+/* 出版物页面 */
+.publications-section {
+  background: #fff;
+}
+
+.section-intro {
+  max-width: 900px;
+  margin: 0 auto 2em;
+}
+
+.section-intro .lead {
+  font-size: 1.3em;
+  color: var(--secondary-color);
+  line-height: 1.7;
+  text-align: center;
+}
+
+
+/* 机会页面 */
+.opportunity-section {
+  background: #fff;
+}
+
+.job {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.job:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.job h3 {
+  background: var(--primary-color);
+  color: white;
+  padding: 1em;
+  margin: 0;
+}
+
+.job-content {
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.job-details {
+  flex: 1;
+}
+
+.job-details p {
+  margin-bottom: 0.8em;
+}
+
+.job-apply {
+  margin-left: 2em;
+}
+
+.application-info {
+  max-width: 900px;
+  margin: 3em auto 0;
+  background: var(--card-bg);
+  padding: 2em;
+  border-radius: 8px;
+}
+
+.application-info h2 {
+  margin-top: 0;
+}
+
+.application-info p {
+  margin-bottom: 1em;
+}
+
+/* 联系页面 */
+.contact-section {
+  background: #fff;
+}
+
+.contact-intro {
+  max-width: 900px;
+  margin: 0 auto 3em;
+}
+
+.contact-intro .lead {
+  font-size: 1.3em;
+  color: var(--secondary-color);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.contact-details {
+  display: flex;
+  gap: 2em;
+  max-width: 900px;
+  margin: 0 auto 3em;
+}
+
+.contact-card {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5em;
+  font-size: 1.5em;
+}
+
+.contact-info p {
+  margin-bottom: 1em;
+}
+
+.map-container {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.map-placeholder {
+  text-align: center;
+  color: var(--secondary-color);
+  padding: 2em;
+}
+
+.contact-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* 页脚 */
+footer {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 2em 0;
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-contact {
+  margin-bottom: 1em;
+}
+
+.footer-contact p {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.footer-copyright p {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 0 2em;
+  }
+  
+  .logo {
+    text-align: center;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+  }
+  
+  .language-switch {
+    display: block;
+  }
+  
+  .hero-banner {
+    padding: 3em 0;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.5em;
+  }
+  
+  .hero-banner h2 {
+    font-size: 1.5em;
+  }
+  
+  .slogan {
+    font-size: 1.2em;
+  }
+  
+  .quote-box {
+    padding: 1.5em;
+  }
+  
+  section {
+    padding: 3em 0;
+  }
+  
+  section h2 {
+    font-size: 1.8em;
+  }
+  
+  .quotes .container {
+    flex-direction: column;
+  }
+  
+  /* Overview section responsive styles */
+  .research-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pi-card,
+  .profile-content {
+    flex-direction: column;
+    gap: 2em;
+  }
+  
+  .profile-left-column,
+  .profile-right-column {
+    width: 100%;
+  }
+  
+  .profile-right-column {
+    padding-left: 0;
+  }
+  
+  .lab-quotes {
+    flex-direction: column;
+  }
+  
+  .lab-quotes blockquote {
+    max-width: 100%;
+  }
+  
+  .research-area, 
+  .research-area:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .research-image {
+    max-width: 100%;
+  }
+  
+  .contact-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .job-content {
+    flex-direction: column;
+  }
+  
+  .job-apply {
+    margin-top: 2em;
+  }
+  
+  .publications-list li {
+    flex-direction: column;
+  }
+  
+  .publication-year {
+    margin-bottom: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0.5em 0;
+  }
+  
+  nav a.active::after {
+    left: 25%;
+    width: 50%;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2em;
+  }
+  
+  .hero-banner h2 {
+    font-size: 1.3em;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quote {
+    padding: 1.5em;
+  }
+  
+  .people-list {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Overview section responsive styles for mobile */
+  .research-pillars {
+    grid-template-columns: 1fr;
+  }
+  
+  .lead.fullwidth {
+    font-size: 1em;
+    padding: 1rem;
+  }
+  
+  .pillar {
+    padding: 0.8rem;
+  }
+}
+
+/* Specific style for people section container to be wider */
+.people-section > .container {
+  max-width: 1350px; /* Increased width for people cards area */
+}
+
+/* Styles for Joint Training Students section */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Responsive grid */
+  gap: 1.5em; /* Space between cards */
+  margin-top: 1.5em;
+}
+
+.student-card {
+  background-color: #fdfdfd; /* Slightly different background for distinction */
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 1.5em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.student-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.student-card h3 {
+  font-size: 1.25em;
+  color: var(--primary-color);
+  margin-bottom: 0.8em;
+}
+
+.student-card p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 0.5em;
+  color: #444;
+}
+
+.student-card p strong {
+  color: var(--secondary-color); /* Make labels stand out a bit */
+}
+
+/* Publications styling - simplified and more serious look */
+main .container h2 {
+  font-size: 2.2em;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 1.5em 0 1em;
+  position: relative;
+}
+
+main .container h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--secondary-color);
+  margin: 0.5em auto;
+}
+
+.publication-category {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+  padding: 1.5em 2em;
+  border-left: 3px solid var(--primary-color);
+}
+
+.publication-category:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.publication-category::before {
+  display: none; /* Remove decorative element */
+}
+
+.publication-category h3 {
+  color: var(--primary-color);
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #eee;
+}
+
+.publication-category h3::after {
+  display: none; /* Remove decorative element */
+}
+
+.publication-category ul {
+  list-style: none;
+  padding-left: 5px;
+}
+
+.publication-category li {
+  padding: 0.8em 1em;
+  margin-bottom: 0.6em;
+  background: #f9f9f9;
+  border-radius: 2px;
+  position: relative;
+  line-height: 1.6;
+  box-shadow: none;
+  border-left: 2px solid var(--accent-color);
+  display: block;
+  font-size: 0.95em;
+}
+
+.publication-category li:hover {
+  background: #f2f2f2;
+  transform: none;
+  box-shadow: none;
+}
+
+.publication-category li::before {
+  display: none; /* Remove bullet point */
+}
+
+/* Conference tag styling - more serious */
+.publication-category li strong {
+  display: inline-block;
+  font-weight: 500;
+  background: #f0f0f0;
+  color: var(--primary-color);
+  padding: 0.2em 0.6em;
+  border-radius: 2px;
+  font-size: 0.85em;
+  margin-left: 0.8em;
+  border: 1px solid #ddd;
+  letter-spacing: 0.5px;
+}
+
+.publication-category li strong:hover {
+  background: #e8e8e8;
+  transform: none;
+}
+
+/* Special tag styles - more subtle */
+.publication-category li strong:nth-of-type(2) {
+  background-color: #f5f5f5;
+  color: #d35400;
+  border-color: #e5e5e5;
+  margin-left: 0.4em;
+}
+
+/* Publications additional responsive styling */
+@media (max-width: 768px) {
+  .publication-category {
+    padding: 1.2em;
+  }
+
+  .publication-category li {
+    padding: 0.8em;
+  }
+  
+  .publication-category li strong {
+    margin-top: 0.3em;
+    margin-left: 0;
+    margin-right: 0.5em;
+    display: inline-block;
+  }
+}
+
+/* Main container padding adjustment */
+main {
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+/* 确保内容区域完全覆盖页面 */
+.content-full-wrapper {
+  background-color: white;
+  flex-grow: 1;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 50px;
+  box-shadow: 0 10px 30px white;
+}
+
+/* 确保mission区域扩展到底部，没有间隙 */
+.mission {
+  padding-bottom: 6em;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  background-color: white;
+}
+
+/* 确保页脚和内容之间没有间隙 */
+footer {
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  background: var(--dark-bg) !important;
+  padding: 2em 0;
+}
+
+/* Resources Section Styling */
+.resources-section {
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.resource-category {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 49, 107, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.resource-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 49, 107, 0.08);
+}
+
+.resource-category h2 {
+  color: var(--primary-color);
+  background: transparent;
+  padding: 1.5rem 1.5rem 0.8rem 1.5rem;
+  margin: 0;
+  font-size: 2rem;
+  position: relative;
+  text-align: left;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+  border-bottom: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.resource-category h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  width: 70px;
+  height: 3px;
+  background: var(--accent-color);
+  margin: 0;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.resource-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.resource-item {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(120, 194, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+  z-index: 0;
+}
+
+.resource-item:hover {
+  border-left-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 49, 107, 0.1);
+}
+
+.resource-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.resource-item p {
+  color: var(--text-color);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.resource-item a.btn-sm {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.resource-item a.btn-sm:hover {
+  background: var(--primary-color);
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 49, 107, 0.2);
+}
+
+.resource-access {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 49, 107, 0.08);
+}
+
+.resource-access h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.resource-access h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  margin: 0.5rem 0;
+}
+
+.resource-access p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.resource-access .resource-link {
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 1px dashed var(--secondary-color);
+  padding-bottom: 2px;
+}
+
+.resource-access .resource-link:hover {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+/* Responsive adjustments for resources section */
+@media (max-width: 992px) {
+  .resource-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .resource-category h2 {
+    font-size: 1.5rem;
+  }
+  
+  .resource-item h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Global styles for section headings */
+h2 {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Override for resource category headings */
+.resource-category h2,
+.content-wrapper .resource-category h2,
+main .content-wrapper .resource-category h2 {
+  color: var(--primary-color) !important;
+  background: transparent !important;
+  padding: 1.5rem 1.5rem 0.8rem 1.5rem !important;
+  margin: 0 !important;
+  font-size: 2rem !important;
+  position: relative !important;
+  text-align: left !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+  border-bottom: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.resource-category h2::after,
+.content-wrapper .resource-category h2::after,
+main .content-wrapper .resource-category h2::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 1.5rem !important;
+  width: 70px !important;
+  height: 3px !important;
+  background: var(--accent-color) !important;
+  margin: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Make sure we don't override colors in the slideshow version of the hero banner */
+main > .hero-banner h1,
+main > .hero-banner h2 {
+  color: #fff !important;
+}
+
+/* Make sure slogan text in hero banner has high contrast */
+.hero-banner .slogan {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
+
+/* Make sure the main content extends fully */
+main {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ensure mission section extends to the bottom */
+.mission {
+  padding-bottom: 6em;
+  margin-bottom: 0;
+}
+
+/* Ensure footer has no gaps */
+footer {
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Make sure section heading in people page has less space above it */
+.people-section h2:first-of-type {
+  margin-top: 0.5em;
+}
+
+/* Reduce spacing between hr and content */
+.people-section hr {
+  margin-bottom: 1.5em !important;
+} 

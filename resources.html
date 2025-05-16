@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | OpenDataLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <style>
+    /* Redesigned section headings with small accent line */
+    .resource-category h2 {
+      color: var(--primary-color) !important;
+      background: transparent !important;
+      padding: 1.5rem 1.5rem 0.8rem 1.5rem !important;
+      border-bottom: none !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
+      font-size: 2rem !important;
+      display: block !important;
+      visibility: visible !important;
+      position: relative !important;
+    }
+    
+    .content-wrapper .resource-category h2 {
+      color: var(--primary-color) !important;
+      background: transparent !important;
+      display: block !important;
+      border-bottom: none !important;
+    }
+    
+    .resource-category h2::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 1.5rem !important;
+      width: 70px !important;
+      height: 3px !important;
+      background: var(--accent-color) !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+    
+    .resource-category {
+      border-top: 4px solid var(--secondary-color) !important;
+    }
+  </style>
+</head>
+<body>  
+  <header>
+    <div class="container nav-container">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="people.html">People</a>
+        <a href="publications.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="opportunity.html">Opportunities</a>
+      </nav>
+    </div>
+  </header>  
+  <main>
+    <!-- Note: content-wrapper will be added by JavaScript -->
+    <section class="resources-section">
+      <div class="container">
+        <div class="section-intro">
+          <p class="lead">
+            OpenDataLab provides a comprehensive suite of resources for researchers, practitioners, and students interested in data-centric AI. Below you'll find our datasets, tools and platforms that support cutting-edge AI research and development.
+          </p>
+        </div>
+        
+        <div class="resources-grid">
+          <!-- Datasets Section -->
+          <div class="resource-category">
+            <h2 id="datasets-heading">Datasets</h2>
+            <div class="resource-items">
+              <div class="resource-item">
+                <h3>OmniDocBench</h3>
+                <p>A high-quality multi-source evaluation benchmark that pioneers a new paradigm for document parsing assessment</p>
+                <a href="https://arxiv.org/abs/2412.07626" class="btn-sm">Access Dataset</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3>Wanjuan Silkroad</h3>
+                <p>The first large-scale multilingual corpus covering mainstream modalities</p>
+                <a href="https://opendatalab.com/OpenDataLab/WanJuanSiLu2O" class="btn-sm">Access Dataset</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3>Shusheng Wanjuan</h3>
+                <p>Shanghai AI Lab's first open-source high-quality multimodal pretraining corpus for large models</p>
+                <a href="https://opendatalab.com/OpenDataLab/WanJuan1_dot_0" class="btn-sm">Access Dataset</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Platforms & Tools Section -->
+          <div class="resource-category">
+            <h2 id="platforms-tools-heading">Platforms &amp; Tools</h2>
+            <div class="resource-items">
+              <div class="resource-item">
+                <h3>OpenDataLab</h3>
+                <p>China's most influential large model data platform in terms of volume and data scale</p>
+                <a href="https://opendatalab.com/" class="btn-sm">Visit Platform</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3>MinerU</h3>
+                <p>A document corpus production engine for the large model era</p>
+                <a href="http://mineru.net/" class="btn-sm">Explore Details</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3>Label U</h3>
+                <p>A flexible annotation tool compatible with multiple data formats and freely configurable combinations</p>
+                <a href="https://labelu-tools.shlab.tech/" class="btn-sm">Explore Details</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3>Label LLM</h3>
+                <p>A renowned data annotation platform in the open-source field</p>
+                <a href="https://labelu-tools.shlab.tech/" class="btn-sm">Explore Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="resource-access">
+          <h2>More Resources</h2>
+          <p>For additional resources and tools, please visit <a href="https://opendatalab.org.cn/OpenSourceTools" target="_blank" class="resource-link">OpenDataLab's Open Source Tools platform</a>. The platform provides a comprehensive collection of AI development resources.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-contact">
+          <p>Shanghai Artificial Intelligence Laboratory · OpenDataLab | Email: xxxxxxx</p>
+        </div>
+        <div class="footer-copyright">
+          <p>Copyright © 2025 OpenDataLab | All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 
