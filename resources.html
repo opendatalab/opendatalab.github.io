@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | OpenDataLab</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/publications.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/language.js" defer></script>
+  <style>
+    /* Redesigned section headings with small accent line */
+    .resource-category h2 {
+      color: var(--primary-color) !important;
+      background: transparent !important;
+      padding: 1.5rem 1.5rem 0.8rem 1.5rem !important;
+      border-bottom: none !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.5px !important;
+      font-size: 2rem !important;
+      display: block !important;
+      visibility: visible !important;
+      position: relative !important;
+    }
+    
+    .content-wrapper .resource-category h2 {
+      color: var(--primary-color) !important;
+      background: transparent !important;
+      display: block !important;
+      border-bottom: none !important;
+    }
+    
+    .resource-category h2::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 1.5rem !important;
+      width: 70px !important;
+      height: 3px !important;
+      background: var(--accent-color) !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+    
+    .resource-category {
+      border-top: 4px solid var(--secondary-color) !important;
+    }
+  </style>
+</head>
+<body>  
+  <header>
+    <div class="container nav-container">
+      <nav>
+        <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+        <a href="research.html" data-en="Research" data-zh="研究方向">Research</a>
+        <a href="people.html" data-en="People" data-zh="团队成员">People</a>
+        <a href="publications.html" data-en="Publications" data-zh="学术成果">Publications</a>
+        <a href="news.html" data-en="News" data-zh="新闻动态">News</a>
+        <a href="resources.html" class="active" data-en="Resources" data-zh="资源平台">Resources</a>
+        <a href="opportunity.html" data-en="Opportunities" data-zh="加入我们">Opportunities</a>
+      </nav>
+      <div class="language-switch">
+        <button id="lang-toggle">中文</button>
+      </div>
+    </div>
+  </header>  
+  <main>
+    <!-- Note: content-wrapper will be added by JavaScript -->
+    <section class="people-section">
+      <div class="container">
+        <h2 data-en="Resources & Platforms" data-zh="资源与平台">Resources & Platforms</h2>
+        <hr style="margin-bottom: 3em;">
+
+        <div class="section-intro">
+          <p class="lead" data-en="OpenDataLab provides a comprehensive suite of resources for researchers, practitioners, and students interested in data-centric AI. Below you'll find our datasets, tools and platforms that support cutting-edge AI research and development." data-zh="OpenDataLab为对以数据为中心的AI感兴趣的研究人员、从业者和学生提供全面的资源套件。以下是支持前沿AI研究和开发的数据集、工具和平台。">
+            OpenDataLab provides a comprehensive suite of resources for researchers, practitioners, and students interested in data-centric AI. Below you'll find our datasets, tools and platforms that support cutting-edge AI research and development.
+          </p>
+        </div>
+        
+        <div class="resources-grid">
+          <!-- Datasets Section -->
+          <div class="resource-category">
+            <h2 id="datasets-heading" data-en="Datasets" data-zh="数据集">Datasets</h2>
+            <div class="resource-items">
+              <div class="resource-item">
+                <h3 data-en="OmniDocBench" data-zh="OmniDocBench">OmniDocBench</h3>
+                <p data-en="A high-quality multi-source evaluation benchmark that pioneers a new paradigm for document parsing assessment" data-zh="高质量多源评估基准，开创文档解析评估新范式">A high-quality multi-source evaluation benchmark that pioneers a new paradigm for document parsing assessment</p>
+                <a href="https://arxiv.org/abs/2412.07626" class="btn-sm" data-en="Access Dataset" data-zh="访问数据集">Access Dataset</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="Wanjuan Silkroad" data-zh="万卷丝路">Wanjuan Silkroad</h3>
+                <p data-en="The first large-scale multilingual corpus covering mainstream modalities" data-zh="首个覆盖主流模态的大规模多语言语料">The first large-scale multilingual corpus covering mainstream modalities</p>
+                <a href="https://opendatalab.com/OpenDataLab/WanJuanSiLu2O" class="btn-sm" data-en="Access Dataset" data-zh="访问数据集">Access Dataset</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="Shusheng Wanjuan" data-zh="书生万卷">Shusheng Wanjuan</h3>
+                <p data-en="Shanghai AI Lab's first open-source high-quality multimodal pretraining corpus for large models" data-zh="上海AI Lab首个开源的大模型高质量多模态预训练语料">Shanghai AI Lab's first open-source high-quality multimodal pretraining corpus for large models</p>
+                <a href="https://opendatalab.com/OpenDataLab/WanJuan1_dot_0" class="btn-sm" data-en="Access Dataset" data-zh="访问数据集">Access Dataset</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Platforms & Tools Section -->
+          <div class="resource-category">
+            <h2 id="platforms-tools-heading" data-en="Platforms & Tools" data-zh="平台与工具">Platforms &amp; Tools</h2>
+            <div class="resource-items">
+              <div class="resource-item">
+                <h3 data-en="OpenDataLab" data-zh="OpenDataLab">OpenDataLab</h3>
+                <p data-en="China's most influential large model data platform in terms of volume and data scale" data-zh="国内体量和数据规模最具影响力的大模型数据平台">China's most influential large model data platform in terms of volume and data scale</p>
+                <a href="https://opendatalab.com/" class="btn-sm" data-en="Visit Platform" data-zh="访问平台">Visit Platform</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="MinerU" data-zh="MinerU">MinerU</h3>
+                <p data-en="A document corpus production engine for the large model era" data-zh="大模型时代的文档语料生产引擎">A document corpus production engine for the large model era</p>
+                <a href="http://mineru.net/" class="btn-sm" data-en="Explore Details" data-zh="了解详情">Explore Details</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="Label U" data-zh="Label U">Label U</h3>
+                <p data-en="A flexible annotation tool compatible with multiple data formats and freely configurable combinations" data-zh="兼容多种数据格式、自由组合配置的灵活标注工具">A flexible annotation tool compatible with multiple data formats and freely configurable combinations</p>
+                <a href="https://labelu-tools.shlab.tech/" class="btn-sm" data-en="Explore Details" data-zh="了解详情">Explore Details</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="Label LLM" data-zh="Label LLM">Label LLM</h3>
+                <p data-en="A renowned data annotation platform in the open-source field" data-zh="开源领域知名的数据标注平台">A renowned data annotation platform in the open-source field</p>
+                <a href="https://labelu-tools.shlab.tech/" class="btn-sm" data-en="Explore Details" data-zh="了解详情">Explore Details</a>
+              </div>
+              
+              <div class="resource-item">
+                <h3 data-en="OpenDataArena" data-zh="OpenDataArena">OpendataArena</h3>
+                <p data-en="A comprehensive benchmark platform for evaluating and comparing AI models across diverse tasks" data-zh="综合评估基准平台，用于评估和比较多种数据集">A comprehensive benchmark platform for evaluating and comparing AI models across diverse tasks</p>
+                <a href="https://opendataarena.github.io/" class="btn-sm" data-en="Explore Details" data-zh="了解详情">Explore Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="resource-access">
+          <h2 data-en="More Resources" data-zh="更多资源">More Resources</h2>
+          <p data-html-en="For additional resources and tools, please visit <a href='https://opendatalab.org.cn/OpenSourceTools' target='_blank' class='resource-link'>OpenDataLab's Open Source Tools platform</a>. The platform provides a comprehensive collection of AI development resources." data-html-zh="获取更多资源和工具，请访问<a href='https://opendatalab.org.cn/OpenSourceTools' target='_blank' class='resource-link'>OpenDataLab开源工具平台</a>。该平台提供全面的AI开发资源集合。">For additional resources and tools, please visit <a href="https://opendatalab.org.cn/OpenSourceTools" target="_blank" class="resource-link">OpenDataLab's Open Source Tools platform</a>. The platform provides a comprehensive collection of AI development resources.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-contact">
+          <p>Shanghai Artificial Intelligence Laboratory · OpenDataLab | Email: OpenDataLab@pjlab.org.cn</p>
+        </div>
+        <div class="footer-copyright">
+          <p>Copyright © 2025 OpenDataLab | All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 

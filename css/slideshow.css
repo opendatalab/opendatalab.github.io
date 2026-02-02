@@ -1,0 +1,313 @@
+/* Slideshow Background Styles */
+.slideshow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* 恢复到合理的z-index值，让轮播图可见 */
+  overflow: hidden;
+  display: block;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+}
+
+.slide.active {
+  opacity: 1;
+  animation: zoomIn 8s linear forwards;
+}
+
+/* Default slideshow images for all pages */
+.slide:nth-child(1) {
+  background-image: url('../assets/images/slide1.jpg');
+}
+
+.slide:nth-child(2) {
+  background-image: url('../assets/images/slide2.jpg');
+}
+
+.slide:nth-child(3) {
+  background-image: url('../assets/images/slide3.jpg');
+}
+
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+/* Overlay style - 调整为在slideshow内部显示 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Navigation */
+header {
+  background-color: transparent;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* 当滚动时，导航栏变为深蓝色 */
+header.scrolled {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent-color);
+}
+
+nav a.active::after {
+  background: var(--accent-color);
+}
+
+/* 给body添加平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 主内容区域样式 */
+body {
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding-top: 0;
+  background-color: transparent;
+}
+
+/* Hero banner to work with slideshow */
+.hero-banner {
+  background: transparent;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.hero-banner h1 {
+  color: #fff !important;
+  font-size: 3.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+.hero-banner h2 {
+  color: #fff !important;
+  font-size: 1.8em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+.quote-box {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-box .slogan {
+  color: var(--primary-color);
+  font-size: 1.3em;
+  line-height: 1.8;
+}
+
+/* Content sections - ensure they cover the entire background */
+main::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -20px; /* 减少延伸 */
+  left: 0;
+  width: 100%;
+  height: 20px; /* 减少高度 */
+  background-color: white;
+  z-index: 1;
+}
+
+/* Content full wrapper - ensures full coverage of slideshow */
+.content-full-wrapper {
+  position: relative;
+  background-color: white;
+  z-index: 2;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
+  padding-bottom: 20px; /* 减少底部内边距 */
+  min-height: 80vh;
+}
+
+/* Content sections */
+.overview {
+  background-color: transparent;
+  position: relative;
+  padding: 4em 0;
+  z-index: 2; /* Ensure content is above the background */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Other sections */
+section:not(.hero-banner) {
+  background-color: white;
+  padding: 4em 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Modify page title for non-home pages */
+.page-title {
+  padding: 4em 0;
+  text-align: center;
+  background: #fff;
+  height: auto;
+  display: block;
+  padding-top: 4em;
+}
+
+.page-title h1 {
+  color: var(--primary-color);
+  font-size: 2.8em;
+  text-shadow: none;
+}
+
+/* Fix footer to be dark blue and readable */
+footer {
+  background: var(--primary-color);
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  margin-top: -1px;
+}
+
+/* Opportunity button should still stand out */
+nav a[href="opportunity.html"] {
+  color: #fff;
+  background-color: #0055b8;
+  text-shadow: none;
+}
+
+nav a[href="opportunity.html"]:hover, 
+nav a[href="opportunity.html"].active {
+  background-color: #0072f5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-banner {
+    height: 90vh;
+  }
+  
+  .hero-banner h1 {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 80vh;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.5em;
+  }
+  
+  .hero-banner h2 {
+    font-size: 1.5em;
+  }
+  
+  .page-title h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* 移除整个body的白色覆盖，这会导致轮播图完全消失 */
+body::after {
+  display: none; /* 移除这个覆盖层 */
+}
+
+/* 减少底部覆盖区域的高度 */
+.footer-background-cover {
+  position: relative;
+  height: 50px; /* 减少高度 */
+  background-color: white;
+  z-index: 5;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  width: 100%;
+}
+
+/* 减少全宽覆盖层的高度 */
+.full-width-cover {
+  position: relative;
+  width: 100%;
+  height: 20px; /* 大幅减少高度 */
+  background-color: white;
+  z-index: 6;
+  margin-bottom: -1px;
+}
+
+/* 修正页脚颜色为黑色 */
+footer {
+  background: var(--dark-bg) !important; /* 使用黑色背景 */
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  margin-top: -1px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+} 
